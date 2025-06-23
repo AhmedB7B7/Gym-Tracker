@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gym Dashboard</title>
+
+    <!-- 💅 Internal CSS Styling -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 30px;
+            background-color: #f9f9f9;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        h2 {
+            margin-top: 50px;
+            color: #333;
+        }
+
+        /* Table styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+            background-color: #fff;
+        }
+
+        th, td {
+            padding: 12px;
+            border: 1px solid #ccc;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f0f0f0;
+        }
+
+        .section {
+            margin-bottom: 60px;
+        }
+
+        /* Export button styling */
+        .export-link {
+            text-align: right;
+            margin-bottom: 20px;
+        }
+
+        .export-link a {
+            text-decoration: none;
+            background-color: #2e8b57;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+        }
+
+        .export-link a:hover {
+            background-color: #27684b;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- 🏠 Page Heading -->
+    <h1>🏋️ Gym Finance Dashboard</h1>
+
+    <!-- 📥 Export Excel Button -->
+    <div class="export-link">
+        <a href="{{ url_for('export_excel') }}">📥 Export to Excel</a>
+    </div>
+
+    <!-- 📊 Income Table Section -->
+    <div class="section">
+        <h2>Income Records</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Men</th>
+                    <th>Girls</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- 🌀 Loop through income data -->
+                {% for income in income_records %}
+                <tr>
+                    <td>{{ income.date.strftime('%Y-%m-%d') }}</td>
+                    <td>{{ income.men }}</td>
+                    <td>{{ income.girls }}</td>
+                </tr>
+                {% else %}
+                <!-- ⚠️ Shown if no income data -->
+                <tr><td colspan="3">No income records found.</td></tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+    <!-- 💸 Expense Table Section -->
+    <div class="section">
+        <h2>Expense Records</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Date</th>
+                    <th>Category</th>
+                    <th>Amount</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- 🌀 Loop through expense data -->
+                {% for expense in expense_records %}
+                <tr>
+                    <td>{{ expense.date.strftime('%Y-%m-%d') }}</td>
+                    <td>{{ expense.category }}</td>
+                    <td>{{ expense.amount }}</td>
+                </tr>
+                {% else %}
+                <!-- ⚠️ Shown if no expense data -->
+                <tr><td colspan="3">No expense records found.</td></tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+</body>
+</html>

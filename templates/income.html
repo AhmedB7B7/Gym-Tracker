@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Daily Income</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 40px;
+            background-color: #f9f9f9;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        form {
+            max-width: 400px;
+            margin: auto;
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        input[type="date"],
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            margin-top: 25px;
+            width: 100%;
+            padding: 12px;
+            background-color: #2e8b57;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #27684b;
+        }
+
+        .link {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .link a {
+            color: #2e8b57;
+            text-decoration: none;
+        }
+
+        .link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 📝 Page Title -->
+    <h1>Add Daily Income</h1>
+
+    <!-- ✅ Form to Submit Income -->
+    <form method="POST">
+        <!-- 📅 Date Input -->
+        <label for="date">Date:</label>
+        <input type="date" name="date" required>
+
+        <!-- 💵 Men Income -->
+        <label for="men">Men Income:</label>
+        <input type="number" name="men" min="0" required>
+
+        <!-- 💰 Girls Income -->
+        <label for="girls">Girls Income:</label>
+        <input type="number" name="girls" min="0" required>
+
+        <!-- 🚀 Submit Button -->
+        <button type="submit">Submit</button>
+    </form>
+
+    <!-- 👁️ Link to View Income Records -->
+    <div class="link">
+        <a href="{{ url_for('view_income') }}">👁️ View All Income</a>
+    </div>
+
+</body>
+</html>
+

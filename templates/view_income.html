@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Income Records</title>
+</head>
+<body>
+    <h2>Income Records</h2>
+    <table border="1">
+        <tr>
+            <th>Date</th>
+            <th>Men</th>
+            <th>Girls</th>
+            <th>Total</th>
+        </tr>
+        {% for record in income_records %}
+        <tr>
+            <td>{{ record.date }}</td>
+            <td>{{ record.men }}</td>
+            <td>{{ record.girls }}</td>
+            <td>{{ record.men + record.girls }}</td>
+        </tr>
+	<tr style="font-weight: bold; background-color: #dff0d8;">
+             <td colspan="2">Total Income for the Month:</td>
+   	     <td>{{ total_income }}</td>
+	</tr>
+
+        {% endfor %}
+    </table>
+    <br>
+    <a href="{{ url_for('add_income') }}">Add More</a>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Income & Expense Entry</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 40px;
+            background-color: #f2f2f2;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .form-section {
+            max-width: 450px;
+            margin: 30px auto;
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button {
+            margin-top: 20px;
+            width: 100%;
+            padding: 12px;
+            background-color: #2e8b57;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #27684b;
+        }
+
+        .link {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .link a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #2e8b57;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>📋 Add Daily Income & Expense</h1>
+
+    <!-- 💵 Income Form -->
+    <div class="form-section">
+        <form method="POST">
+            <input type="hidden" name="form_type" value="income">
+
+            <label for="income_date">Date:</label>
+            <input type="date" name="income_date" required>
+
+            <label for="men">Men Income:</label>
+            <input type="number" name="men" min="0" required>
+
+            <label for="girls">Girls Income:</label>
+            <input type="number" name="girls" min="0" required>
+
+            <button type="submit">Submit Income</button>
+        </form>
+    </div>
+
+    <!-- 💸 Expense Form -->
+    <div class="form-section">
+        <form method="POST">
+            <input type="hidden" name="form_type" value="expense">
+
+            <label for="expense_date">Date:</label>
+            <input type="date" name="expense_date" required>
+
+            <label for="category">Category:</label>
+            <input type="text" name="category" required>
+
+            <label for="amount">Amount:</label>
+            <input type="number" name="amount" step="0.01" min="0" required>
+
+            <button type="submit">Submit Expense</button>
+        </form>
+    </div>
+
+    <!-- 🔗 Navigation Links -->
+    <div class="link">
+        <a href="{{ url_for('view_income') }}">👁 View Income</a>
+        <a href="{{ url_for('view_expense') }}">💼 View Expense</a>
+        <a href="{{ url_for('dashboard') }}">📊 Dashboard</a>
+    </div>
+    <div class ="form-section" style="text-align:center; background-color: #fefefe;">
+	<h2> Total income:{{ total_income  }}</h2>
+	<h2> Total Expense:{{ total_expense }}</h2>
+    </div>
+
+</body>
+</html>
