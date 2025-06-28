@@ -72,30 +72,30 @@
 </head>
 <body>
 
-    <!-- 📝 Page Title -->
+    <!--  Page Title -->
     <h1>Add Daily Income</h1>
 
-    <!-- ✅ Form to Submit Income -->
+    <!-- form to Submit Income -->
     <form method="POST">
-        <!-- 📅 Date Input -->
+        <!--  Date Input -->
         <label for="date">Date:</label>
         <input type="date" name="date" required>
 
-        <!-- 💵 Men Income -->
+        <!-- Men Income -->
         <label for="men">Men Income:</label>
         <input type="number" name="men" min="0" required>
 
-        <!-- 💰 Girls Income -->
+        <!-- Girls Income -->
         <label for="girls">Girls Income:</label>
         <input type="number" name="girls" min="0" required>
 
-        <!-- 🚀 Submit Button -->
+        <!--  Submit Button -->
         <button type="submit">Submit</button>
     </form>
 
-    <!-- 👁️ Link to View Income Records -->
+    <!-- Link to View Income Records -->
     <div class="link">
-        <a href="{{ url_for('view_income') }}">👁️ View All Income</a>
+        <a href="{{ url_for('view_income') }}"> View All Income</a>
     </div>
 
 </body>

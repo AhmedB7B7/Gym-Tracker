@@ -9,18 +9,18 @@
         <tr>
             <th>Date</th>
             <th>Category</th>
-            <th>Amount</th>
+            <th>cost</th>
         </tr>
         {% for record in expense_records %}
         <tr>
             <td>{{ record.date }}</td>
             <td>{{ record.category }}</td>
-            <td>{{ record.amount }}</td>
+            <td>{{ record.cost }}</td>
         </tr>
-	<tr style="font-weight: bold; background-color: #f2dede;">
+<!--    <tr style="font-weight: bold; background-color: #f2dede;">
 	    <td colspan="2">Total Expense for the month:</td>
 	    <td>{{ total_expense}}</td>
-	</tr>
+	</tr>-->
         {% endfor %}
     </table>
     <br>

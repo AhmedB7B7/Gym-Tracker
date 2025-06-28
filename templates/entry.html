@@ -68,9 +68,9 @@
 </head>
 <body>
 
-    <h1>📋 Add Daily Income & Expense</h1>
+    <h1>Add Daily Income & Expense</h1>
 
-    <!-- 💵 Income Form -->
+    <!--  Income Form -->
     <div class="form-section">
         <form method="POST">
             <input type="hidden" name="form_type" value="income">
@@ -88,7 +88,7 @@
         </form>
     </div>
 
-    <!-- 💸 Expense Form -->
+    <!--  Expense Form -->
     <div class="form-section">
         <form method="POST">
             <input type="hidden" name="form_type" value="expense">
@@ -106,11 +106,11 @@
         </form>
     </div>
 
-    <!-- 🔗 Navigation Links -->
+    <!-- Navigation Links -->
     <div class="link">
-        <a href="{{ url_for('view_income') }}">👁 View Income</a>
-        <a href="{{ url_for('view_expense') }}">💼 View Expense</a>
-        <a href="{{ url_for('dashboard') }}">📊 Dashboard</a>
+        <a href="{{ url_for('view_income') }}"> View Income</a>
+        <a href="{{ url_for('view_expense') }}"> View Expense</a>
+        <a href="{{ url_for('dashboard') }}"> Dashboard</a>
     </div>
     <div class ="form-section" style="text-align:center; background-color: #fefefe;">
 	<h2> Total income:{{ total_income  }}</h2>

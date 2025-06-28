@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <title>Gym Dashboard</title>
 
-    <!-- 💅 Internal CSS Styling -->
+    <!-- CSS Styling -->
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -66,15 +66,25 @@
 
 <body>
 
-    <!-- 🏠 Page Heading -->
-    <h1>🏋️ Gym Finance Dashboard</h1>
+    <!-- Page Heading -->
+    <h1> Gym Finance Dashboard</h1>
+    <!-- dashboard.html -->
 
-    <!-- 📥 Export Excel Button -->
-    <div class="export-link">
-        <a href="{{ url_for('export_excel') }}">📥 Export to Excel</a>
+    <h2>Monthly Summary</h2>
+
+    <div style="border: 1px soli d #ccc; padding: 10px; width: fit-content;">
+      <p><strong>Total Income:</strong> {{ total_income }}</p>
+      <p><strong>Total Expense:</strong> {{ total_expense }}</p>
+      <p><strong>Net Profit:</strong> {{ total_income - total_expense }}</p>
     </div>
 
-    <!-- 📊 Income Table Section -->
+
+    <!-- Export Excel Button -->
+    <div class="export-link">
+        <a href="{{ url_for('export_excel') }}"> Download Excel</a>
+    </div>
+
+    <!-- Income Table Section -->
     <div class="section">
         <h2>Income Records</h2>
 
@@ -87,7 +97,7 @@
                 </tr>
             </thead>
             <tbody>
-                <!-- 🌀 Loop through income data -->
+                <!--  Loop through income data -->
                 {% for income in income_records %}
                 <tr>
                     <td>{{ income.date.strftime('%Y-%m-%d') }}</td>
@@ -95,14 +105,14 @@
                     <td>{{ income.girls }}</td>
                 </tr>
                 {% else %}
-                <!-- ⚠️ Shown if no income data -->
-                <tr><td colspan="3">No income records found.</td></tr>
+                <!-- Shown if no income data -->
+                <tr><td colspan="3">No income records found.</td></tr>   
                 {% endfor %}
             </tbody>
         </table>
     </div>
 
-    <!-- 💸 Expense Table Section -->
+    <!--  Expense Table Section -->
     <div class="section">
         <h2>Expense Records</h2>
 
@@ -115,15 +125,15 @@
                 </tr>
             </thead>
             <tbody>
-                <!-- 🌀 Loop through expense data -->
+                <!--  Loop through expense data -->
                 {% for expense in expense_records %}
                 <tr>
                     <td>{{ expense.date.strftime('%Y-%m-%d') }}</td>
                     <td>{{ expense.category }}</td>
-                    <td>{{ expense.amount }}</td>
+                    <td>{{ expense.cost }}</td>
                 </tr>
                 {% else %}
-                <!-- ⚠️ Shown if no expense data -->
+                <!-- Shown if no expense data -->
                 <tr><td colspan="3">No expense records found.</td></tr>
                 {% endfor %}
             </tbody>
