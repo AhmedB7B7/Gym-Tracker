@@ -1,28 +1,37 @@
 # Python
 __pycache__/
-*.pyc
+*.py[cod]
 *.pyo
 *.pyd
 
 # Virtual environment
 venv/
+env/
 
 # Environment variables
 .env
 
-# SQLite database
+# SQLite / DB files
 *.sqlite3
 *.db
 
-# OS files
-.DS_Store
-
-# VS Code
-.vscode/
-
-# Flask cache
-instance/
+# Logs
 *.log
 
-# Excel exports
+# OS / System files
+.DS_Store
+Thumbs.db
+
+# IDE/editor configs
+.vscode/
+.idea/
+*.swp
+
+# Flask / instance files
+instance/
+*.pid
+
+# Exported Excel/CSV files
 *.xlsx
+*.csv
+
