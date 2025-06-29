@@ -97,6 +97,12 @@
             <input type="date" name="expense_date" required>
 
             <label for="category">Category:</label>
+	    <select>
+	      <option value="">__Secect Category__</option>
+	      {% for cat in categories%}
+	      <option value='{{ cat }}'>{{ cat }}</option>
+	      {% endfor %}
+	    </select><br><br>
             <input type="text" name="category" required>
 
             <label for="amount">Amount:</label>

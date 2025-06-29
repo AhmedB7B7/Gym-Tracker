@@ -46,7 +46,7 @@ class Income(db.Model):
 class Expense(db.Model):
     id = db.Column(db.Integer, primary_key=True)              # Unique ID
     date = db.Column(db.Date, nullable=False)                 # Date of expense
-    category = db.Column(db.String(50), nullable=False)       # Expense category (e.g. rent, salary)
+    category = db.Column(db.String(50), nullable=False)       # Expense dropup (e.g. rent, salary)
     cost = db.Column(db.Float, nullable=False)                # Cost of the expense
 
 # ----------------------- #
@@ -58,9 +58,9 @@ class Expense(db.Model):
 def check_db():
     try:
         count = Expense.query.count()  # Count records in Expense table
-        return f"✅ Expense table exists. Total records: {count}"  # Show count
+        return f" Expense table exists. Total records: {count}"  # Show count
     except Exception as e:
-        return f"❌ Error: {e}"  # Show error message if table doesn't work
+        return f" Error: {e}"  # Show error message if table doesn't work
 
 # Redirect root URL (/) to the income page
 @app.route('/')
@@ -109,9 +109,10 @@ def add_expense():
         expense = Expense(date=date, category=category, cost=amount)  # Create expense object
         db.session.add(expense)                                       # Add to DB
         db.session.commit()                                           # Save changes
-        return redirect('/expense/view')                              # Go to view page
-
-    return render_template('add_expense.html')                        # Show expense form
+        return redirect('/expense/view')
+                              # Go to view page
+    categories = ['Gym Equipment', 'Trainer Salary', 'Rent', 'Maintenance', 'Electricity']
+    return render_template('add_expense.html', categories=categories)
 
 # Route to view expenses
 @app.route('/expense/view')
@@ -213,8 +214,8 @@ def add_entry():
     total_expense = db.session.query(
         db.func.coalesce(db.func.sum(Expense.cost), 0)
     ).scalar()
-
-    return render_template('entry.html', total_income=total_income, total_expense=total_expense)
+    categories = ['Gym Equipments', 'Trainer Salary', 'Rent', 'Maintance', 'Electricity']
+    return render_template('entry.html', total_income=total_income, total_expense=total_expense, categories=categories)
 
 # ----------------------- #
 # App Startup
