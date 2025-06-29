@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environment
+venv/
+
+# Environment variables
+.env
+
+# SQLite database
+*.sqlite3
+*.db
+
+# OS files
+.DS_Store
+
+# VS Code
+.vscode/
+
+# Flask cache
+instance/
+*.log
+
+# Excel exports
+*.xlsx
