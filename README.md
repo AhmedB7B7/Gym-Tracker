@@ -73,12 +73,8 @@ python app.py
 
 ## 📸 Demo
 
-Here is what the dashboard looks like:
+Here is what the dashboard and entry looks like:
 
 ![Dashboard](screenshots/dashboard.png)
-
-## 📸 Demo
-
-Here is what the entry looks like:
 
 ![Dashboard](screenshots/dashboard2.png)
