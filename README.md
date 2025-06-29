@@ -71,3 +71,8 @@ python app.py
 
 --Screenshots
 
+## 📸 Demo
+
+Here is what the dashboard looks like:
+
+![Dashboard](screenshots/dashboard.png)
