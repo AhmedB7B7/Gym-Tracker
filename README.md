@@ -1,4 +1,4 @@
-# 🏋️‍♂️ Gym Tracker Web App
+#  Gym Tracker Web App
 
 A simple web-based system built with **Flask** and **SQLite** to track **gym income and expenses**, view monthly summaries, and export data to Excel.
 
@@ -6,13 +6,13 @@ A simple web-based system built with **Flask** and **SQLite** to track **gym inc
 
 ##  Features
 
-- ✅ Add income (men & girls) with date
-- ✅ Add expenses with category, date, and cost
-- ✅ Category selection via dropdown menu
-- ✅ Dashboard with total income and expense
-- ✅ Export all data to Excel file
-- ✅ Combined form to submit both income and expenses
-- ✅ Responsive and easy-to-use UI
+-  Add income (men & girls) with date
+-  Add expenses with category, date, and cost
+-  Category selection via dropdown menu
+-  Dashboard with total income and expense
+-  Export all data to Excel file
+-  Combined form to submit both income and expenses
+-  Responsive and easy-to-use UI
 
 ---
 
@@ -62,7 +62,7 @@ python app.py
 
 
 --Usage
-## 🧑‍💻 Usage
+##  Usage
 
 1. Go to the homepage
 2. Add income/expense records
@@ -71,7 +71,7 @@ python app.py
 
 --Screenshots
 
-## 📸 Demo
+
 
 Here is what the dashboard and entry looks like:
 
